@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Reviews</title>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+
+        function toggleImage(imageId) {
+            var image = document.getElementById(imageId);
+            image.style.display = (image.style.display === "none" || image.style.display === "") ? "block" : "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get all elements with the class 'toggle-image'
+            var paragraphs = document.querySelectorAll(".toggle-image");
+
+            // Attach a click event listener to each paragraph
+            paragraphs.forEach(function(paragraph, index) {
+                var imageId = "myImage" + index; // Create unique image IDs for each paragraph
+                var image = document.getElementById(imageId);
+
+                // Set initial state and add click event listener
+                image.style.display = "none";
+                paragraph.addEventListener("click", function() {
+                    toggleImage(imageId);
+                });
+            });
+        });
+        function addComment() {
+    var commentText = document.getElementById('comment-text').value;
+
+    if (commentText.trim() === '') {
+        alert('Please enter a comment.');
+        return;
+    }
+
+    // Simulate sending the comment to the server
+    // In a real-world scenario, you would use Ajax to send the comment to the server
+
+    // Simulate a server response (you need to replace this with actual server response)
+    var serverResponse = {
+        username: 'User123',
+        comment: commentText,
+        timestamp: new Date().toLocaleString(),
+    };
+
+    // Add the comment to the page
+    displayComment(serverResponse);
+
+    // Clear the textarea
+    document.getElementById('comment-text').value = '';
+}
+
+function displayComment(comment) {
+    var commentList = document.getElementById('comment-list');
+
+    var listItem = document.createElement('li');
+    listItem.className = 'comment';
+    listItem.innerHTML = `<strong>${comment.username}:</strong> ${comment.comment} <span class="timestamp">${comment.timestamp}</span>`;
+
+    // Add the new comment to the top of the list
+    commentList.insertBefore(listItem, commentList.firstChild);
+}
+    </script>
+</head>
+<body>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <nav>
+            <ul>
+                <li id="menu"> Menu</li>
+                <li><a href="index.html" >ABOUT ME</a></li>
+                <li><a href="overview.html">OVERVIEW</a></li>
+                <li class="currentpage"><a href="reviews.html">REVIEWS</a></li>
+            </ul>
+        </nav>
+    </div>
+    <span onclick="openNav()" id='wordmenu' >Menu</span>
+    <a href="#main">Skip to Main Content</a> 
+    <main id="main"></main>
+    <div>
+    <h1>Indepth Rating of Restaurants</h1>
+    <p class="directions"> [click on each paragraph to display the image and access their website my clicking on each picture]</p>
+    <p class="toggle-image"> FIRST: The best restaurant in Ann Arbor is Rich Jc. First, initially going into the restaurant, you are easily just taken over my spicy and savory goodness. The barlike structure not only ensures an intimate customer service experience, but helps with the crampness of an ordinary restaurant. My go to order is soondobu, spicy pork with egg and in the hot stone pot, and kimchi jiggae. The soondobu has a naturally creamy flavor that marraiges the perfect amount of spice and saltiness. A similar broth is used for kimichi Jiggae. The spicy pork is absolutely delicious, both sweet and spicy at the same time. When eating it, the rice crisps and leaves with a delicious treat. I do think the protein to rice ratio is a little lacking which is why it loses a few points. Compared to other food I've had, Rich JC is certainly not a 10/10, but they are honestly quite close.</p>
+    <a href="https://www.doordash.com/store/rich-jc-ann-arbor-24870581/?pickup=true&utm_campaign=gpa" target="_blank">
+        <img src="Image/foodrich.jpeg" alt="image of hot kimichi jiggae" width="400" id="myImage0">
+    </a>
+    <p class="toggle-image">SECOND: Beirock Taco Truck is truly a hole in the wall place for a quick meal. You can easily get a two meals for less than 15 dollars. Their burritos are huge. Their Birria tacos and Carne Asada is reminicient to that of which I had in New York City, which truly speaks to the quality of their sauce. Delicious, finger linking food. </p>
+    <a href="https://www.doordash.com/store/beirock-foodtruck-ann-arbor-23589253/" target="_blank">
+        <img src="Image/beirockfood.jpeg" alt="image of quesadillas" width="400" id="myImage1">
+    </a>
+    <p class="toggle-image">THIRD: Canelle is the perfect place to grab a quick coffee and indulge in a delicious pastry. In particular, their PacMan pastry is a delicious mix between  sugary milky cream and the saltiness of the bread. Their crossoint is also perfetly crispy and layered. I haven't tried their sandwiches, yet but have heard that it is beyond amazing. Their coffee tends to be bitter and demonstrates a lack of expertise in that field. However, it is otherwise amazing.</p>
+    <a href="https://www.cannelledetroit.com/" target="_blank">
+        <img src="image/canellefood.jpeg" alt="display of canelle food" width="400" id="myImage2"> 
+    </a>
+    <p class="toggle-image"> FOURTH: Plate sushi is a little gouremet, but their bento boxes are packed with nutrients and macros. Their fried food is not overly oily and you are getting your bang for your buck. While it can be on the pricier side, their attention to the flavor while also lowering sodium is truly remarkable. It is, however, a little far and sometimes their eel avocado rool aka my favorite roll falls short. Hence. a lower score compared to the last three locations</p>
+    <a href="https://www.platesushi.com/" target="_blank">
+        <img src="image/sushi.jpeg" alt="bento box" width="400" id="myImage3">
+    </a>
+    <p class="toggle-image"> Fifth: Namaste is a delicious restaurant. Due to my lack of expertise in  south asian cuisines, it is hard for me to deterine whether or not the food is authnetic or truly delicious. For my tastes, I thought their chicken Briyanni and Chicken Tikka Masala is amazing, although a little too sweet at times.They should provide more yogurt for the Briyanni, but their overall dishes are infused with aromatic spices and is truly a spectacular place to eat. </p>
+    <a href="https://namasteflavoursannarbor.com/"   target="_blank">
+        <img src="image/foodnamaste.jpeg" alt="food from namaste" width="400" id="myImage4">
+    </a> 
+
+</div>
+<div id="comment-box">
+    <h2>Comments</h2>
+    <ul id="comment-list"></ul>
+    <div>
+        <textarea id="comment-text" placeholder="Add a comment..."></textarea>
+        <button onclick="addComment()">Add Comment</button>
+    </div>
+</div>
+</body>
+</html>

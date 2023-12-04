@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
+    <title>About Me</title>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        let slideIndex = 0;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+        </script>
+</head>
+<body>
+    <a href = "#main">Skip to Main Content</a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <nav>
+            <ul>
+                <li id="menu">  Menu</li>
+                <li class="currentpage"><a href="index.html" >ABOUT ME</a></li>
+                <li><a href="overview.html">OVERVIEW</a></li>
+                <li><a href="reviews.html">REVIEWS</a></li>
+            </ul>
+        </nav>
+    </div>
+    <span id="wordmenu" onclick="openNav()">Menu</span>
+    
+    <main id = "main"></main>
+    <div>
+        <h1>About Me</h1>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="image/AboutMePicture.jpg" style="width:100%" alt="bereal image of me" class="slidepic">
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="image/carosel1.jpg" style="width:100%" alt="tapas with friends"  class="slidepic"> 
+
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="image/carosel2.jpg" style="width:100%" alt="Korean spicy pork and soup"  class="slidepic">
+    
+            </div>
+            
+            <!-- <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="image/carosel3.jpg" style="width:100%" alt="girl looking and salmon benedict">
+                <div class="text">me looking and salmon benedic</div>
+              </div> -->
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+        <!-- <img src="image/AboutmePicture.jpg" alt = "bereal image of me" width="400" id="me"> -->
+        <p id="hello">Hi! My name is Jing Li. I am currently a sophomore studying business, but I have a huge passion for food. In fact, my parents own a chinese restaurant back in Jersey where I am from. I created this page because I wanted to share my love for food. My favorite cuisines are Thai, Mediterranean, and obviously Chinese. </p>
+        <h2> My Healing Moments with Food </h2>
+        <img src="image/burger.jpg" alt ="3 burgers from Frita Batidos" width="200" class="gallery" id="onep">
+        <p id="one" class = "imgdescrip"> While I normally feel like Ann Arbor food are quite mid, Frita Batidos blew me away. In particular, I like to get their beef frita with everything on it. Yes, that means I get the egg, the avocado, and EXTRA Sauce.</p>
+        <img src="image/CafeTrou.jpg" alt = "4 plates of delicious salads" width="200" id="twop" class="gallery">
+        <p id="two" class = "imgdescrip"> I do not think the food here was the best that I've ever gotten, but there have been so many happy memories I've shared with my friends here, which is why it is such a healing meal for me. Their salmon eggs benedict, while standard, is still delicious. I like that their hollandase was not too thick and perfectly coats and complements the salmon fishy taste and egg yolk. </p>
+        <img src="image/duckwrice.jpg" alt = "Marinated Duck on Rice" width="200" id="threep" class="gallery">
+        <p id="three" class = "imgdescrip"> This is an absolute gem from Chinatown in New York City. I had to wait in a 20 minute line to get that super tiny plate of food. You know it is good when you have to pay cash for the goods. While the duck was marinated, it was not super salty. They also put cabbage underneath it to neutrilize the taste and poured extra sauce on the rice underneath.</p>
+        <img src="image/nachos.jpg" alt="Plate of nachos with corn and beans on top" id="fourp" width="200"  class="gallery">
+        <p id="four" class = "imgdescrip"> This was aight. It was from Condados in Ann Arbor. It was pretty standard mexican food, but I love tacos and nachos. Hence, why I included it in!</p>
+    </div>
+</body>
+</html>

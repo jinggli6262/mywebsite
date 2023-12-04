@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Overview</title>
+    <script>
+        function displayText() {
+    var text = document.getElementById("textField");
+            if (text.style.display === "none" || text.style.display === "") {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+  }
+  function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <nav>
+            <ul>
+                <li id="menu"> Menu</li>
+                <li><a href="index.html" >ABOUT ME</a></li>
+                <li class="currentpage"><a href="overview.html">OVERVIEW</a></li>
+                <li><a href="reviews.html">REVIEWS</a></li>
+            </ul>
+        </nav>
+    </div>
+    <span onclick="openNav()" id='wordmenu' >Menu</span>
+    <a href = "#main">Skip to Main Content</a> 
+    <main id = "main"></main>
+    <div>
+    <h1>Introduction</h1>
+    <img src="image/nyc.jpg" alt="food with friends in nyc" width="400" id="map">
+    <p>As an amature food critic, I thought it would be important to start my own website to start my series of reviews to jumpstart my career. As someone whose parent's own a chinese restaurant and have helped tasted items for their menu, I felt like I would be good at judging and evaluating the taste of different dishes at restaurants. Additionally, as someone who loves to eat and also provide unsolicited opinions whenever I visit new food places, I thought this would be the perfect outlet for me</p>
+    <h1> Why Michigan? Why Ann Arbor?</h1>
+    <img src="image/MapofAnnArbor.png" alt=" map of ann arbor" width="400" id="map">
+    <p>Coming from the tri-state area aka the best food epicenter in the world, I thought it wouldn't be interesting to highlight delicious food locations there. In fact, I encourage people who visit to get rid of their Yelp and Tripadvisor app and just explore. Sometimes the best restaurants are the ones that no one knows about yet. Yes, you want a bang for your buck when visiting a new area, but taking the time to take in the natural cultures in your local areas will really help you soak in the new place. And...food is the best way to learn about a new location. Usually in Ann Arbor, you are not indulging or "soaking up its culture". Instead, students are usually trying to get the best and fastest meals, which is why I feel like I would be able to provide more value </p>
+    <h2>Here are my ratings of my top 5 restaurants</h2>
+    <button onclick="displayText()">Click Me!</button>
+    <div id="textField" style="display: block;">
+        <ul class="image-list">
+            <li class="image-list-item">
+                <img src="image/Richjc.jpeg" alt="Rich Jc's store front" width="200" class="picture">
+                <p class="caption">Rich Jc [Rating of 8/10]</p>
+            </li>
+            <li class="image-list-item">
+                <img src="Image/Beirock.jpeg" alt="Beirock College Taco Truck" width="200" class="picture">
+                <p class="caption">Beirock College Taco Truck [Rating of 8/10]</p>
+            </li>
+            <li class="image-list-item">
+                <img src="Image/canelle.jpeg" alt="Canelle Ann Arbor" width="200" class="picture">
+                <p class="caption">Canelle Ann Arbor [Rating of 7.8/10]</p>
+            </li>
+            <li class="image-list-item">
+                <img src="Image/platesushi.avif" alt="Plate Sushi and Chicken" width="200" class="picture">
+                <p class="caption">Plate Sushi and Chicken [Rating of 7.5/10]</p>
+            </li>
+            <li class="image-list-item">
+                <img src="image/namaste.jpeg" alt="Namaste" width="200" class="picture">
+                <p class="caption">Namaste [7.5/10]</p>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
